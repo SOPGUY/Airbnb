@@ -1,6 +1,4 @@
-import React from "react";
-import { Sailboat, Piano, HandPlatter, House, Castle } from "lucide-react";
-import { MdPool } from "react-icons/md";
+
 import Products from "./Products";
 import Frame from "./Frame";
 

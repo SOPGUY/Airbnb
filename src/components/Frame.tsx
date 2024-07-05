@@ -1,4 +1,4 @@
-import React from 'react'
+
 import mansion from "../assets/mansions.png"
 import boat from "../assets/boats.png"
 import luxe from "../assets/luxe2.png"

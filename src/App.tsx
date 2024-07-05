@@ -1,8 +1,8 @@
-import React from 'react'
+
 import Home from './pages/Home'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import SignUp from './pages/SignUp'
-import { LogIn } from 'lucide-react'
+
 import Airbnb from './pages/Airbnb'
 import LoginIn from './pages/Login'
 

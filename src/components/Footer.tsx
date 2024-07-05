@@ -1,6 +1,4 @@
-import React from 'react'
-import Category1 from './Category1'
-import Category2 from './Category2'
+
 import footer from "../assets/footer.png"
 import foot from "../assets/footer1.png"
 function Footer() {

@@ -1,4 +1,4 @@
-import React from "react";
+
 import NavBar from "./NavBar";
 import {  Globe } from "lucide-react";
 import img from "../assets/Vector.png"

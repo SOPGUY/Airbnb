@@ -1,4 +1,4 @@
-import React from "react";
+
 import comp1 from "../assets/Card carousel (1).png";
 import comp2 from "../assets/Card carousel.png";
 import comp3 from "../assets/Component 11 (1).png";

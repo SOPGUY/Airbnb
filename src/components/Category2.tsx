@@ -1,4 +1,4 @@
-import React from "react";
+
 
 function Category2() {
   return (

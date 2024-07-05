@@ -1,4 +1,4 @@
-import React from "react";
+
 import face from "../assets/facebook.png";
 import gog from "../assets/google.png";
 import app from "../assets/apple.png";
