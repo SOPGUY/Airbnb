@@ -4,7 +4,7 @@ import Frame from "./Frame";
 
 function Hero() {
   return (
-    <div className="bg-[rgb(255,255,255)]">
+    <div className="bg-[rgb(255,255,255)] relative">
       <Frame />
       <Products />
       <div className="mx-auto pl-[90px] flex  flex-row justify-center">

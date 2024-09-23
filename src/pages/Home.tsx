@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <div>
-      <div className="py-10">
+      <div className="py-10 ">
         <Header />
       </div>
       <hr />

@@ -1,13 +1,20 @@
 
-import footer from "../assets/footer.png"
-import foot from "../assets/footer1.png"
+import Cate from "./Cate"
+import Cateeee from "./Cateeee"
+import Category1 from "./Category22"
+import Category2 from "./Category22"
+import Category3 from "./Category3"
+
 function Footer() {
   return (
-    <div className='bg-[rgb(247,247,247)]'>
-      {/* <Category1/>   
-       <Category2/> */}
-      <img src={foot} alt="" />
-      <img src={footer} alt="" />
+    <div className='bg-[rgb(247,247,247)] w-full'>
+       
+       
+       <Cate/>
+       <Category1/>
+
+       <Category3/>
+    
     </div>
   )
 }

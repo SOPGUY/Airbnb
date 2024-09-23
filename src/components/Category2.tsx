@@ -1,151 +1,712 @@
-
+import { useState } from "react";
 
 function Category2() {
+  const getAwayData = {
+    Popular: [
+      { location: "Canmore", subtext: "Condo rentals" },
+      { location: "Benalmadena", subtext: "Holiday rentals" },
+      { location: "Marbella", subtext: "House rentals" },
+      { location: "Mijas", subtext: "House rentals" },
+      { location: "Prescott", subtext: "Vacation rentals" },
+      { location: "Scottsdale", subtext: "Apartment rentals" },
+      { location: "Tucson", subtext: "Vacation rentals" },
+      { location: "Jasper", subtext: "Vacation rentals" },
+      { location: "Mountains view", subtext: "Cabin rentals" },
+      { location: "Devonport", subtext: "Cottage rentals" },
+      { location: "Mallacoota", subtext: "Beach house  rentals" },
+      { location: "Ibiza", subtext: "Apartment rentals" },
+      { location: "Anaheim", subtext: "Vacation rentals" },
+      { location: "Monterey", subtext: "Cabin rentals" },
+      { location: "Paso Robles", subtext: "House rentals" },
+      { location: "Santa Barbara", subtext: "Apartment rentals" },
+      { location: "Sonoma", subtext: "Beach house rentals" },
+      { location: "ber", subtext: "Holiday rentals" },
+      { location: "Dubai", subtext: "Apartment rentals" },
+      { location: "Birmingham", subtext: "Vacation rentals" },
+      { location: "Brighton", subtext: "Vacation rentals" },
+      { location: "Bude", subtext: "Vacation rentals" },
+      { location: "Newcastle upon Tyne", subtext: "Vacation rentals" },
+      { location: "Padstow", subtext: "House rentals" },
+      { location: "South West England", subtext: "Cabin rentals" },
+      { location: "Whitby", subtext: "Vacation rentals" },
+      { location: "Fort myers", subtext: "Vacation rentals" },
+      { location: "Jacksonville", subtext: "Beach house rentals" },
+      { location: "Kissimmee", subtext: "Family-friendly rentals" },
+      { location: "Longboatkey", subtext: "Beach condo rentals" },
+      { location: "Orlando", subtext: "Cottage rentals" },
+      { location: "St Petersburg", subtext: "Vacation rentals" },
+      { location: "St Augustine", subtext: "Beach condo rentals" },
+      { location: "The villages", subtext: "Pet-friendly rentals" },
+      { location: "Dahlonega", subtext: "Cabin rentals" },
+      { location: "Crete", subtext: "House rentals" },
+      { location: "Mykonos", subtext: "Beach house rentals" },
+      { location: "Santorini", subtext: "Mansion rentals" },
+      { location: "Oahu", subtext: "Beachfront rentals" },
+      { location: "Capri", subtext: "Apartment rentals" },
+      { location: "Bar Harbor", subtext: "Pet-friendly rentals" },
+      { location: "Mackinac Island", subtext: "Vacation rentals" },
+      { location: "St Joseph", subtext: "Cottage rentals" },
+      { location: "Larsmont", subtext: "Cottage rentals" },
+      { location: "Las Vegas", subtext: "Vacation  rentals" },
+      { location: "Madrid", subtext: "Vacation rentals" },
+      { location: "Santa Fe", subtext: "Ski-in/ski-out rentals" },
+      { location: "Bermagui", subtext: "Pet-friendly rentals" },
+      { location: "vans Head", subtext: "Vacation rentals" },
+      { location: "Sawtell", subtext: "Vacation rentals" },
+      { location: "Young", subtext: "Vacation rentals" },
+      { location: "Ocracoke", subtext: "Pet-friendly rentals" },
+      { location: "Florence", subtext: "Cottage rentals" },
+      { location: "Lakeside", subtext: "Vacation rentals" },
+      { location: "Lincoln City", subtext: "Vacation rentals" },
+      { location: "Paphos", subtext: "Vacation rentals" },
+      { location: "Maleny", subtext: "Vacation rentals" },
+      { location: "Stanthorpe", subtext: "Pet-friendly rentals" },
+      { location: "Newport", subtext: "Vacation rentals" },
+      { location: "Glasgow ", subtext: "Vacation rentals" },
+      { location: "Scottish Highlands", subtext: "Vacation rentals" },
+      { location: "St Andrews", subtext: "Family-friendly rentals" },
+      { location: "McLaren Vale", subtext: "House rentals" },
+      { location: "Wallaroo", subtext: "Beachfront rentals" },
+      { location: "Charleston", subtext: "Apartment rentals" },
+      { location: "Hvar", subtext: "Apartment rentals" },
+      { location: "Saint John", subtext: "Vacation rentals" },
+      { location: "Chattanooga", subtext: "House rentals" },
+      { location: "Concan", subtext: "Vacation rentals" },
+      { location: "Fredericksburg", subtext: "Cottage rentals" },
+      { location: "New Braunfels", subtext: "Cottage rentals" },
+      { location: "Rockport ", subtext: "House rentals" },
+      { location: "Waco", subtext: "Apartment rentals" },
+      { location: "Forest of Dean District", subtext: "Vacation rentals" },
+      { location: "Jersey ", subtext: "Beach house rentals" },
+      { location: "Lyme Regis", subtext: "Chalet rentals" },
+      { location: "Manchester", subtext: "House rentals" },
+      { location: "Seaview", subtext: "Vacation  rentals" },
+      { location: "Southwold", subtext: "Vacation rentals" },
+      { location: "Staithes", subtext: "Cottage rentals" },
+      { location: "Wells-next-the-Sea", subtext: "House  rentals" },
+      { location: "St. George", subtext: "Apartment rentals" },
+      { location: "Benidorm", subtext: "Apartment rentals" },
+      { location: "Barwon Heads", subtext: "Vacation rentals" },
+      { location: "Castlemaine", subtext: "Vacation rentals" },
+      { location: "Healesville", subtext: "House rentals" },
+      { location: "Marysville", subtext: "Cottage rentals" },
+      { location: "Sorrento", subtext: "Beach house rentals" },
+      { location: "Chincoteague", subtext: "Beachfrontrentals" },
+      { location: "Williamsburg", subtext: "Vacation rentals" },
+      { location: "Hay-on-Wye", subtext: "Cottage rentals" },
+      { location: "Llandudno", subtext: "Apartment rentals" },
+      { location: "Tenby Cabin", subtext: "rentals" },
+    ],
+    "Arts & culture": [
+      { location: "Phoenix", subtext: "Condo rentals" },
+      { location: "Hot Springs", subtext: "Villa rentals" },
+      { location: "Los Angeles", subtext: "Apartment rentals" },
+      { location: "San Diego", subtext: "House rentals" },
+      { location: "San Francisco", subtext: "Vacation rentals" },
+      { location: "Barcelona", subtext: "Vacation rentals" },
+      { location: "Prague", subtext: "Vacation rentals" },
+      { location: "Washinton", subtext: "House rentals" },
+      { location: "Keswick", subtext: "Cabin rentals" },
+      { location: "London", subtext: "House rentals" },
+      { location: "Scarborough", subtext: "Vacation  rentals" },
+      { location: "Sherwood Forest", subtext: "Cabin rentals" },
+      { location: "York", subtext: "Family-friendly rentals" },
+      { location: "Paris", subtext: "House rentals" },
+      { location: "Rhodes", subtext: "Cottage rentals" },
+      { location: "Nashville", subtext: "Vacation rentals" },
+      { location: "Dublin", subtext: "House rentals" },
+      { location: "Florence", subtext: "House rentals" },
+      { location: "Rome", subtext: "House rentals" },
+      { location: "Lisbon", subtext: "House rentals" },
+      { location: "Grand Isle", subtext: "Pet-friendly rentals" },
+      { location: "New Orleans", subtext: "Pet-friendly rentals" },
+      { location: "Martha's Vineyard", subtext: "Vacation rentals" },
+      { location: "South Haven", subtext: "Condon rentals" },
+      { location: "Duluth", subtext: "Pet-friendly rentals" },
+      { location: "Amsterdam", subtext: "House rentals" },
+      { location: "New York", subtext: "Vacation rentals" },
+      { location: "Nice", subtext: "Cottage rentals" },
+      { location: "Inverness", subtext: "Apartment rentals" },
+      { location: "Malaga", subtext: "Apartment rentals" },
+      { location: "Valencia", subtext: "Villa rentals" },
+      { location: "Split", subtext: "House rentals" },
+      { location: "Nashville", subtext: "Rentals with pools" },
+      { location: "Austin", subtext: "Cabin rentals" },
+      { location: "Houston", subtext: "Vacation rentals" },
+      { location: "Dartmouth", subtext: "Chalet rentals" },
+      { location: "Edinburgh", subtext: "Apartment rentals" },
+      { location: "Liverpool", subtext: "Cottage rentals" },
+      { location: "St Ives", subtext: "House rentals" },
+      { location: "Lake Powell", subtext: "Vacation rentals" },
+      { location: "Lake Anna", subtext: "House rentals" },
+      { location: "Leavenworth", subtext: "Chalet rentals" },
+      { location: "Seattle", subtext: "Vacation rentals" },
+    ],
+    Outdoors: [
+      { location: "Lake Martin", subtext: "Apartment rentals" },
+      { location: "Banff", subtext: "Apartment rentals" },
+      { location: "Nerja", subtext: "Villa rentals" },
+      { location: "Greer", subtext: "Cabin rentals" },
+      { location: "Lake Havasu City", subtext: "Condo rentals" },
+      { location: "Lake Powell", subtext: "Vacation rentals" },
+      { location: "North Rim", subtext: "Vacation rentals" },
+      { location: "Payson", subtext: "Vacation rentals" },
+      { location: "Pinetop-Lakeside", subtext: "Cabin rentals" },
+      { location: "Red Rock", subtext: "Cabin rentals" },
+      { location: "Dinner Plain", subtext: "Pet-friendly  rentals" },
+      { location: "Streaky Bay", subtext: "Vacation rentals" },
+      { location: "Emerald Lake", subtext: "Cabin rentals" },
+      { location: "Vancouver Island", subtext: "Condo rentals" },
+      { location: "Victoria", subtext: "Apartment rentals" },
+      { location: "Idyllwild-Pine Cove", subtext: "House rentals" },
+      { location: "Mammoth Lakes", subtext: "Vacation rentals" },
+      { location: "Palm Desert", subtext: "Villa rentals" },
+      { location: "Shaver Lake", subtext: "Vacation rentals" },
+      { location: "South Lake Tahoe", subtext: "Vacation rentals" },
+      { location: "Cultus Lake", subtext: "Cabin rentals" },
+      { location: "Georgian Bay", subtext: "Vacation rentals" },
+      { location: "Manitoulin Island", subtext: "Cottage rentals" },
+      { location: "Ottawa River", subtext: "Cottage rentals" },
+      { location: "The Blue Mountains", subtext: "Vacation rentals" },
+      { location: "West Kelowna", subtext: "Beachfront rentals" },
+      { location: "Gran Canaria", subtext: "Villa rentals" },
+      { location: "Lanzarote", subtext: "Cottage rentals" },
+      { location: "Castle Hill", subtext: "Vacation rentals" },
+      { location: "Aspen", subtext: "Ski-in/ski-out rentals" },
+      { location: "Colorado Springs", subtext: "Vacation rentals" },
+      { location: "Denver", subtext: "Vacation rentals" },
+      { location: "Durango", subtext: "Pet-friendly rentals" },
+      { location: "Estes Park", subtext: "House rentals" },
+      { location: "Grand Lake", subtext: "Vacation rentals" },
+      { location: "Keystone", subtext: "Cabin rentals" },
+      { location: "Vail", subtext: "Condo rentals" },
+      { location: "Winter Park", subtext: "Condon rentals" },
+      { location: "Salcombe", subtext: "Cottage rentals" },
+      { location: "Swanage", subtext: "Apartment rentals" },
+      { location: "Cape Coral", subtext: "Vacation rentals" },
+      { location: "Blue Ridge", subtext: "Condon rentals" },
+      { location: "Jekyll Island", subtext: "Rentals with pools" },
+      { location: "Lake Lanier", subtext: "Family-friendly rentals" },
+      { location: "Corfu", subtext: "Apartment rentals" },
+      { location: "McCall", subtext: "Pet-friendly rentals" },
+      { location: "Clear lake", subtext: "Condo rentals" },
+      { location: "Lough Eske", subtext: "Vacation rentals" },
+      { location: "Lake Cumberland", subtext: "Lakehouse rentals" },
+      { location: "Portland", subtext: "House rentals" },
+      { location: "South Portland", subtext: "Vacation rentals" },
+      { location: "Deep Creek Lake", subtext: "Lakehouse rentals" },
+      { location: "Lake Michigan Beach", subtext: "House rentals" },
+      { location: "Lakeside", subtext: "Vacation  rentals" },
+      { location: "Torch Lake", subtext: "Lakehouse rentals" },
+      { location: "Traverse City", subtext: "Cottage rentals" },
+      { location: "Upper Peninsula of Michigan", subtext: "Vacation rentals" },
+      { location: "Branson", subtext: "Rentals with pools" },
+      { location: "Lake of the Ozarks", subtext: "Vacation rentals" },
+      { location: "Big Sky", subtext: "House rentals" },
+      { location: "West Yellowstone", subtext: "Condo rentals" },
+      { location: "Moutain Charleston", subtext: "Vacation rentals" },
+      { location: "Cloudcroft", subtext: "Cabin rentals" },
+      { location: "Red River", subtext: "Cabin rentals" },
+      { location: "Bellingen", subtext: "Cabin rentals" },
+      { location: "Brunswick Heads", subtext: "Pet-friendly rentals" },
+      { location: "Adirondack Mountains", subtext: "Vacation rentals" },
+      { location: "Lake Placid", subtext: "Apartment rentals" },
+      { location: "Niagara Falls", subtext: "Cottage rentals" },
+      { location: "Bald Head Island", subtext: "Cottage rentals" },
+      { location: "Bryson City", subtext: "Cabin rentals" },
+      { location: "Emerald Isle", subtext: "House rentals" },
+      { location: "Lake Gaston", subtext: "Cabin rentals" },
+      { location: "Lake Lure", subtext: "Vacation rentals" },
+      { location: "Lake Norman of Catawba", subtext: "Vacation rentals" },
+      { location: "Mount Airy", subtext: "Cabin rentals" },
+      { location: "Oak Island", subtext: "Beachfront rentals" },
+      { location: "Geneva-on-the-Lake", subtext: "Vacation rentals" },
+      { location: "Medicine Park", subtext: "Vacation rentals" },
+      { location: "Turner Falls", subtext: "Cabin rentals" },
+      { location: "Muskoka Lakes", subtext: "Vacation rentals" },
+      { location: "Tobermory", subtext: "Cabin rentals" },
+      { location: "Bend", subtext: "Cabin rentals" },
+      { location: "Crater Lake", subtext: "Cabin rentals" },
+      { location: "Northern Oregon Coast Range", subtext: "Vacation rentals" },
+      { location: "Sunriver", subtext: "Vacation rentals" },
+      { location: "Lake Harmony", subtext: "Vacation rentals" },
+      { location: "Mount Pocono", subtext: "Cabin rentals" },
+      { location: "Mont-Tremblant", subtext: "Condo rentals" },
+      { location: "Aviemore", subtext: "Cabin rentals" },
+      { location: "Isle of Mull", subtext: "Cottage rentals" },
+      { location: "Robe", subtext: "Vacation rentals" },
+      { location: "Mountain Rest", subtext: "Cabin rentals" },
+      { location: "St Helens", subtext: "Vacation rentals" },
+      { location: "United States", subtext: "Vacation rentals" },
+      { location: "Canyon Lake", subtext: "House rentals" },
+      { location: "Lake Austin", subtext: "House  rentals" },
+      { location: "Lake Buchanan", subtext: "Cabin rentals" },
+      { location: "Betws-y-Coed", subtext: "Vacation rentals" },
+      { location: "Filey", subtext: "Condo rentals" },
+      { location: "Fort William", subtext: "Cottage rentals" },
+      { location: "Loch Lomond", subtext: "Vacation rentals" },
+      { location: "Port Isaac", subtext: "Cottage rentals" },
+      { location: "Moab", subtext: "House rentals" },
+      { location: "Mount Zion", subtext: "Vacation rentals" },
+      { location: "Moraira", subtext: "Vacation rentals" },
+      { location: "Inverloch", subtext: "Vacation rentals" },
+      { location: "Metung", subtext: "Vacations rentals" },
+      { location: "Mount Buller", subtext: "Vacation rentals" },
+      { location: "Port Campbell", subtext: "Cottage rentals" },
+      { location: "Wilsons Promontory", subtext: "Vacation rentals" },
+      { location: "Shenandoah", subtext: "Cabin rentals" },
+      { location: "Smith Mountain Lake", subtext: "Vacation rentals" },
+      { location: "Snowdon", subtext: "Cottage rentals" },
+      { location: "Lake Chelan", subtext: "Vacation rentals" },
+      { location: "Lake Crescent", subtext: "Vacation rentals" },
+      { location: "Lake Quinault", subtext: "Cottage rentals" },
+      { location: "Quinault", subtext: "Vacation rentals" },
+      { location: "Skamania", subtext: "Vacation rentals" },
+      { location: "Snowshoe", subtext: "Vacation rentals" },
+      { location: "Lake Geneva", subtext: "Apartment rentals" },
+      { location: "Wisconsin Dells", subtext: "Vacation rentals" },
+      { location: "United States", subtext: "Vacation rentals" },
+    ],
+    Mountains: [
+      { location: "Mentone", subtext: "Cottage rentals" },
+      { location: "Sedona", subtext: "Pet-friendly rentals" },
+      { location: "Helen", subtext: "House rentals" },
+      { location: "Pine Mountain", subtext: "Vacation rentals" },
+      { location: "Stone Mountain", subtext: "Cabin rentals" },
+      { location: "Island Park", subtext: "Apartment rentals" },
+      { location: "Blue Mountains", subtext: "Chalet rentals" },
+      { location: "Asheville", subtext: "Rentals with pools" },
+      { location: "Blowing Rock", subtext: "Cottage rentals" },
+      { location: "BBoone", subtext: "Vacation rentals" },
+      { location: "Hochatown", subtext: "Vacation rentals" },
+      { location: "Pigeon Forge", subtext: "Vacation rentals" },
+      { location: "Townsend", subtext: "Vacation rentals" },
+      { location: "Wears Valley", subtext: "Vacation rentals" },
+      { location: "Cabins", subtext: "Vacation rentals" },
+    ],
+    Beach: [
+      { location: "Dauphin Island", subtext: "Beachfront rentals" },
+      { location: "Fort Morgan", subtext: "Vacation rentals" },
+      { location: "Gulf Shores ", subtext: "Vacation rentals" },
+      { location: "Bruny Island", subtext: "Vacation rentals" },
+      { location: "Crescent Head", subtext: "Beach house rentals" },
+      { location: "Gerringong", subtext: "Vacation rentals" },
+      { location: "Hamilton Island", subtext: "House rentals" },
+      { location: "Lancelin ", subtext: "Vacation rentals" },
+      { location: "Melbourne Beach", subtext: "Beachfront rentals" },
+      { location: "Moonta Bay", subtext: "Beachfront rentals" },
+      { location: "Ocean Grove", subtext: "House rentals" },
+      { location: "Majorca", subtext: "Apartment rentals" },
+      { location: "Big Sur", subtext: "Cabin rentals" },
+      { location: "Bodega Bay", subtext: "Vacation rentals" },
+      { location: "Cambria", subtext: "Beachfront rentals" },
+      { location: "Cayucos", subtext: "Vacation rentals" },
+      { location: "Huntington Beach", subtext: "Apartment rentals" },
+      { location: "la Jolla Shores Beach", subtext: "Vacation rentals" },
+      { location: "Laguna Beach", subtext: "Cottage rentals" },
+      { location: "Long Beach", subtext: "Cabin rentals" },
+      { location: "Malibu", subtext: "Bungalow rentals" },
+      { location: "Mission Beach", subtext: "Condo rentals" },
+      { location: "Newport Beach", subtext: "Bungalow rentals" },
+      { location: "Oceanside Beach", subtext: "house rentals" },
+      { location: "Palm Springs", subtext: "Apartment rentals" },
+      { location: "Pismo Beach", subtext: "House rentals" },
+      { location: "Santa Cruz", subtext: "Cottage rentals" },
+      { location: "Santa Monica", subtext: "Cottage rentals" },
+      { location: "Sea Ranch", subtext: "Pet-friendly rentals" },
+      { location: "Playa Blanca", subtext: "Vacation rentals" },
+      { location: "Fuerteventura", subtext: "Vacation rentals" },
+      { location: "Puerto del Carmen", subtext: "Villa rentals" },
+      { location: "Tenerife", subtext: "Cottage rentals" },
+      { location: "Ayia Napa", subtext: " Villa rentals" },
+      { location: "Bethany Beach", subtext: "Beach condo rentals" },
+      { location: "Dewey Beach", subtext: "Pet-friendly rentals" },
+      { location: "Blackpool", subtext: "Cabin rentals" },
+      { location: "Isle of Wight", subtext: "House rentals" },
+      { location: "Newquay", subtext: "Cabin rentals" },
+      { location: "Weymouth", subtext: "Apartment rentals" },
+      { location: "Albufeira", subtext: "Villa rentals" },
+      { location: "Alys Beach", subtext: " Pet-friendly rentals" },
+      { location: "Anna Maria Island", subtext: "Vacation rentals" },
+      { location: "Bradenton", subtext: "Apartment rentals" },
+      { location: "Cape San Blas", subtext: "House rentals" },
+      { location: "Captiva", subtext: "Vacation rentals" },
+      { location: "Clearwater Beach", subtext: "Beach house rentals" },
+      { location: "Cocoa Beach", subtext: "Condo rentals" },
+      { location: "Daytona Beach", subtext: "Pet-friendly rentals" },
+      { location: "Destin  Beach", subtext: "condo rentals" },
+      { location: "Englewood", subtext: "Condo rentals" },
+      { location: "Fort Lauderdale", subtext: "Mansion rentals" },
+      { location: "Fort Myers Beach", subtext: "House rentals" },
+      { location: "Fort Walton Beach", subtext: "House rentals" },
+      { location: "Grayton Beach Beach", subtext: "house rentals" },
+      { location: "Gulf of Mexico", subtext: "Vacation rentals" },
+      { location: "Indian Rocks Beach", subtext: "Bungalow rentals" },
+      { location: "Islamorada", subtext: "Rentals with pools" },
+      { location: "Jacksonville Beach", subtext: "Beach condo rentals" },
+      { location: "Key Largo", subtext: "Bungalow rentals" },
+      { location: "Madeira Beach", subtext: "Beach condo rentals" },
+      { location: "Marathon", subtext: "Rentals with pools" },
+      { location: "Marco Island", subtext: "Villa rentals" },
+      { location: "Mexico Beach", subtext: "Rentals with pools" },
+      { location: "Miami Beach", subtext: "Vacation rentals" },
+      { location: "Miami", subtext: "Villa rentals" },
+      { location: "Miramar Beach", subtext: "Cottage rentals" },
+      { location: "Naples", subtext: "Vacation rentals" },
+      { location: "Navarre Beach", subtext: "Beachfront rentals" },
+      { location: "New Smyrna Beach", subtext: "Apartment rentals" },
+      { location: "Okaloosa Island", subtext: "Beach condo rentals" },
+      { location: "Panama City Beach", subtext: "Vacation rentals" },
+      { location: "Pensacola Beach", subtext: "Vacation rentals" },
+      { location: "Rosemary Beach", subtext: "Vacation rentals" },
+      { location: "Saint George Island", subtext: "Condo rentals" },
+      { location: "Santa Rosa Beach", subtext: "Condo rentals" },
+      { location: "Sarasota", subtext: "Cottage rentals" },
+      { location: "Seagrove Beach", subtext: "Bungalow rentals" },
+      { location: "Seaside", subtext: "Beach house rentals" },
+      { location: "South Beach", subtext: "House rentals" },
+      { location: "St. Augustine Beach", subtext: " Beach house rentals" },
+      { location: "St. Pete Beach", subtext: "House rentals" },
+      { location: "Tampa", subtext: "Beach house rentals" },
+      { location: "West Palm Beach", subtext: "House rentals" },
+      { location: "Bora-Bora", subtext: "Apartment rentals" },
+      { location: "Tybee Island", subtext: "Apartment rentals" },
+      { location: "Honolulu", subtext: "Beach house rentals" },
+      { location: "Kailua-Kona", subtext: " Villa rentals" },
+      { location: "Kapalua", subtext: "Villa rentals" },
+      { location: "Kauai", subtext: "Family-friendly rentals" },
+      { location: "Kihei", subtext: "Cottage rentals" },
+      { location: "Ko Olina Beach", subtext: "Vacation rentals" },
+      { location: "Maui", subtext: "Cottage rentals" },
+      { location: "Topsail Island", subtext: "Vacation rentals" },
+      { location: "Old Orchard Beach", subtext: "House rentals" },
+      { location: "Wells", subtext: "Vacation rentals" },
+      { location: "Cape Cod", subtext: "Mansion rentals" },
+      { location: "Nantucket", subtext: "Vacation rentals" },
+      { location: "Biloxi", subtext: "Beach house rentals" },
+      { location: "Avalon", subtext: "Vacation rentals" },
+      { location: "Jersey Shore", subtext: "Beach house rentals" },
+      { location: "North Wildwood", subtext: " Beachfront rentals" },
+      { location: "Ocean City", subtext: "Cottage rentals" },
+      { location: "Sea Isle City", subtext: "Beachfront rentals" },
+      { location: "Stone Harbor", subtext: "Cottage rentals" },
+      { location: "Hyams Beach", subtext: "Beach house rentals" },
+      { location: "Fire Island", subtext: "Vacation rentals" },
+      { location: "Montauk", subtext: "Cottage rentals" },
+      { location: "Ocean Beach", subtext: "House rentals" },
+      { location: "Atlantic Beach", subtext: "Beach condo rentals" },
+      { location: "Carolina Beach", subtext: "Vacation rentals" },
+      { location: "Corolla", subtext: "Beachfront rentals" },
+      { location: "Holden Beach", subtext: " Condo rentals" },
+      { location: "Kitty Hawk", subtext: "Vacation rentals" },
+      { location: "Kure Beach", subtext: "Beachfront rentals" },
+      { location: "Nags Head", subtext: "Vacation rentals" },
+      { location: "Ocean Isle Beach", subtext: "Beach condo rentals" },
+      { location: "Sunset Beach", subtext: "Beachfront rentals" },
+      { location: "Surf City", subtext: "Vacation rentals" },
+      { location: "Wilmington", subtext: "Apartment rentals" },
+      { location: "Wrightsville Beach", subtext: "Beach condo rentals" },
+      { location: "Sauble Beach", subtext: "Chalet rentals" },
+      { location: "Wasaga Beach", subtext: "Vacation rentals" },
+      { location: "Cannon Beach", subtext: "Vacation rentals" },
+      { location: "Seaside", subtext: "House rentals" },
+      { location: "Carvoeiro", subtext: "Apartment rentals" },
+      { location: "Gold Coast", subtext: "Mansion rentals" },
+      { location: "Moreton Island", subtext: "Vacation rentals" },
+      { location: "Block Island", subtext: "Vacation rentals" },
+      { location: "Puerto Peñasco", subtext: "Vacation rentals" },
+      { location: "Charleston Oceanfront Villas", subtext: "Vacation rentals" },
+      { location: "Edisto Beach", subtext: "Beachfront rentals" },
+      { location: "Folly Beach", subtext: "House rentals" },
+      { location: "Fripp Island", subtext: "Vacation rentals" },
+      { location: "Isle of Palms", subtext: "Condo rentals" },
+      { location: "Kiawah Island", subtext: "Rentals with pools" },
+      { location: "Myrtle Beach", subtext: "Family-friendly rentals" },
+      { location: "Pawleys Island", subtext: "Beach house rentals" },
+      { location: "Seabrook Island", subtext: "Vacation rentals" },
+      { location: "Sullivan's Island", subtext: "Pet-friendly rentals" },
+      { location: "Surfside Beach", subtext: "Beach house rentals" },
+      { location: "Alicante", subtext: "Vacation rentals" },
+      { location: "Costa Adeje", subtext: "House rentals" },
+      { location: "Costa del Sol Occidental", subtext: "Vacation rentals" },
+      { location: "Fuengirola", subtext: "Vacation rentals" },
+      { location: "Los Cristianos", subtext: "Apartment rentals" },
+      { location: "Corpus Christi", subtext: "Beachfront rentals" },
+      { location: "Port Aransas", subtext: "Vacation rentals" },
+      { location: "South Padre Island", subtext: "Beachfront rentals" },
+      { location: "Surfside Beach", subtext: "House rentals" },
+      { location: "Bournemouth", subtext: "Villa rentals" },
+      { location: "New Quay", subtext: "Vacation rentals" },
+      { location: "Anglesea", subtext: "Vacation rentals" },
+      { location: "Abersoch", subtext: "Pet-friendly rentals" },
+      { location: "Seabrook", subtext: "Vacation rentals" },
+      { location: "Jurien Bay", subtext: "Pet-friendly rentals" },
+    ],
+    uniqueStays: [
+      { location: "Cabins  United States" },
+      { location: "Treehouses", subtext: "United States" },
+      { location: "Glamping", subtext: "United States" },
+      { location: "Tiny Houses", subtext: "United States" },
+      { location: "Beach Houses", subtext: "United States" },
+      { location: "Campers and RVs", subtext: "United States" },
+      { location: "Lakehouses", subtext: "United States" },
+      { location: "Yurt Rentals", subtext: "United States" },
+      { location: "Yurt Rentals", subtext: "United Kingdom" },
+      { location: "Castle Rentals", subtext: "United States" },
+      { location: "Houseboats", subtext: "United States" },
+      { location: "Holiday Caravans", subtext: "United Kingdom" },
+      { location: "Private Island Rentals", subtext: "United States" },
+      { location: "Farm Houses", subtext: "United States" },
+      { location: "Farm Cottages", subtext: "United Kingdom" },
+      { location: "Cabin Rentals", subtext: "Australia" },
+      { location: "Luxury Cabins", subtext: "United Kingdom" },
+      { location: "Luxury Cabins", subtext: "United States" },
+      { location: "Holiday Chalets", subtext: "United Kingdom" },
+      { location: "Cottage Rentals", subtext: "United States" },
+      { location: "Holiday Cottages", subtext: "United Kingdom" },
+      { location: "Mansion Rentals", subtext: "United States" },
+      { location: "Villa Rentals", subtext: "United Kingdom" },
+      { location: "Holiday Bungalows", subtext: "United Kingdom" },
+      { location: "Bungalow Rentals", subtext: "United States" },
+      { location: "Condo Rentals", subtext: "United States" },
+      { location: "Holiday Apartments", subtext: "Australia" },
+      { location: "Holiday Houses", subtext: "United States" },
+      { location: "Holiday Houses", subtext: "United Kingdom" },
+      { location: "Private Holiday Rentals", subtext: "United Kingdom" },
+      { location: "Big House Rentals", subtext: "United States" },
+      { location: "Big Cottages", subtext: "Australia" },
+      { location: "Large Villas", subtext: "United Kingdom" },
+      { location: "House Rentals with a Pool", subtext: "United States" },
+      { location: "Cabin Rentals with a Pool", subtext: "United States" },
+      { location: "Villas with a Pool", subtext: "United Kingdom" },
+      { location: "Apartments with a Hot Tub", subtext: "United States" },
+      {
+        location: "Holiday Cottages with a Hot Tub",
+        subtext: "United Kingdom",
+      },
+      { location: "Beach Cabins", subtext: "United States" },
+      { location: "Beachfront Rentals", subtext: " United States" },
+      { location: "Beach Houses", subtext: "United Kingdom" },
+      { location: "Beach Villas", subtext: "United Kingdom" },
+      { location: "Coastal Cottages", subtext: "United Kingdom" },
+      { location: "Pet-Friendly Vacation Rentals", subtext: "United States" },
+      { location: "Pet-Friendly Beach Rental", subtext: " United States" },
+      { location: "Pet-Friendly Cabin Rentals", subtext: "United States" },
+      { location: "Dog-Friendly Cottages", subtext: "United Kingdom" },
+      { location: "Luxury Dog-Friendly Cottages", subtext: "United Kingdom" },
+    ],
+    categories: [
+      { location: "Amazing pools" },
+      { location: "Arctic" },
+      { location: "Camping" },
+      { location: "Campers" },
+      { location: "Castles" },
+      { location: "Containers" },
+      { location: "Countryside" },
+      { location: "Design" },
+      { location: "Earth homes" },
+      { location: "Farms" },
+      { location: "National parks" },
+      { location: "Vineyards" },
+      { location: "OMG!" },
+      { location: "Tiny homes" },
+      { location: "Towers" },
+      { location: "Windmills" },
+      { location: "Luxe" },
+      { location: "Site Footer" },
+    ],
+
+    things: [
+      { location: "London", subtext: "England" },
+      { location: "Paris", subtext: "Île-de-France" },
+      { location: "New York", subtext: "New York" },
+      { location: "Barcelona", subtext: "Catalonia" },
+      { location: "İstanbul", subtext: "İstanbul" },
+      { location: "Bali", subtext: "Indonesia" },
+      { location: "Amsterdam", subtext: "North Holland" },
+      { location: "Miami", subtext: "Florida" },
+      { location: "Madrid", subtext: "Community of Madrid" },
+      { location: "Los Angeles", subtext: "California" },
+      { location: "Rome", subtext: "Lazio" },
+      { location: "Lisbon", subtext: "Lisbon" },
+      { location: "Tokyo", subtext: "Tokyo" },
+      { location: "Vienna", subtext: "Vienna" },
+      { location: "Athens", subtext: "Greece" },
+      { location: "Prague", subtext: "Czechia" },
+      { location: "Orlando", subtext: "Florida" },
+      { location: "Cancún", subtext: "Quintana Roo" },
+      { location: "Santorini", subtext: "Greece" },
+      { location: "Mexico City", subtext: "Mexico City" },
+      { location: "Venice", subtext: "Veneto" },
+      { location: "Playa del Carmen", subtext: "Quintana Roo" },
+      { location: "San Francisco", subtext: "California" },
+      { location: "Las Vegas", subtext: "Nevada" },
+      { location: "Boston", subtext: "Massachusetts" },
+      { location: "San Diego", subtext: "California" },
+      { location: "Chicago", subtext: "Illinois" },
+      { location: "Seattle", subtext: "Washington" },
+      { location: "Washington", subtext: "District of Columbia" },
+      { location: "Atlanta", subtext: "Georgia" },
+      { location: "Austin", subtext: "Texas" },
+      { location: "Maui", subtext: "Hawaii" },
+      { location: "New Orleans", subtext: "Louisiana" },
+      { location: "San Juan", subtext: "San Juan" },
+      { location: "O‘ahu", subtext: "Hawaii" },
+      { location: "Denver", subtext: "Colorado" },
+      { location: "Nashville", subtext: "Tennessee" },
+      { location: "Charleston", subtext: "South Carolina" },
+      { location: "Los Cabos", subtext: "Baja California Sur" },
+      { location: "Savannah", subtext: "Georgia" },
+      { location: "Dubai", subtext: "Dubai" },
+      { location: "Seoul", subtext: "Seoul" },
+      { location: "France" },
+      { location: "Berlin", subtext: "Berlin" },
+      { location: "Canada" },
+      { location: "Toronto", subtext: "Ontario" },
+      { location: "Switzerland" },
+      { location: "Budapest", subtext: " Hungary" },
+      { location: " Spain" },
+      { location: "Portugal" },
+      { location: " United States" },
+      { location: "Italy" },
+      { location: "Greece" },
+      { location: "Malta" },
+      { location: "Türkiye" },
+      { location: "Croatia" },
+      { location: "Vancouver", subtext: "British Columbia" },
+      { location: "Mexico" },
+      { location: "Milan", subtext: "Lombardy" },
+      { location: "Dublin", subtext: "County Dublin" },
+      { location: "Germany" },
+      { location: "Costa Rica" },
+      { location: "Manhattan", subtext: "New York" },
+      { location: "Japan" },
+      { location: "Málaga", subtext: "Andalusia" },
+      { location: "Copenhagen", subtext: "Denmark" },
+      { location: "Montreal", subtext: "Quebec" },
+      { location: "Brussels", subtext: "Brussels" },
+      { location: "Valencia", subtext: "Valencian Community" },
+      { location: "Singapore" },
+      { location: "Nice", subtext: "Provence-Alpes-Côte d'Azur" },
+      { location: "Munich", subtext: "Bavaria" },
+      { location: "Majorca", subtext: "Balearic Islands" },
+      { location: "Thailand" },
+      { location: "Tulum", subtext: "Quintana Roo" },
+      { location: "Ireland" },
+      { location: "Porto", subtext: "Porto District" },
+      { location: "England", subtext: "United Kingdom" },
+      { location: "Miami Beach", subtext: "Florida" },
+      { location: "Tenerife", subtext: "Canary Islands" },
+      { location: "Netherlands" },
+      { location: "Zürich", subtext: "Zurich" },
+      { location: "Cyprus" },
+      { location: "Stockholm", subtext: "Stockholm County" },
+      { location: "Cape Town", subtext: "Western Cape" },
+      { location: "Norway" },
+      { location: "Sydney", subtext: "New South Wales" },
+      { location: "Tuscany", subtext: "Italy" },
+      { location: "Mykonos", subtext: "Greece" },
+      { location: "Hawaii", subtext: "United States" },
+      { location: "Florence", subtext: "Tuscany" },
+      { location: "Colombia" },
+      { location: "Kyiv", subtext: "Ukraine" },
+      { location: "Antalya", subtext: "Antalya" },
+      { location: "Iceland" },
+      { location: "Bangkok", subtext: "Thailand" },
+      { location: "Buenos Aires", subtext: "Buenos Aires" },
+      { location: "Bogotá", subtext: "Bogota" },
+      { location: "Warsaw", subtext: "Masovian Voivodeship" },
+    ],
+    inspiration: [
+      { location: "Family travel hub", subtext: "Tips and inspiration" },
+      { location: "Family budget travel", subtext: "Get there for less" },
+      {
+        location: "Vacation ideas for any budget",
+        subtext: "Make it special without making it spendy",
+      },
+      {
+        location: "Travel Europe on a budget",
+        subtext: "How to take the kids to Europe for less",
+      },
+      {
+        location: "Outdoor adventure",
+        subtext: "Explore nature with the family",
+      },
+      {
+        location: "Bucket list national parks",
+        subtext: "Must-see parks for family travel",
+      },
+      {
+        location: "Kid-friendly state parks",
+        subtext: "Check out these family-friendly hikes",
+      },
+    ],
+    airBnb: [
+      { location: "Atlanta Metro " },
+      { location: "Augusta", subtext: "Georgia" },
+      { location: "Austin Metro", subtext: "Texas" },
+      { location: "Birmingham", subtext: "Alabama" },
+      { location: "Boston Metro", subtext: "Massachusetts" },
+      { location: "Boulder", subtext: "Colorado" },
+      { location: "Charlotte", subtext: "North Carolina" },
+      { location: "Cincinnati", subtext: "Ohio" },
+      { location: "Columbia", subtext: "South Carolina" },
+      { location: "Dallas", subtext: "Texas" },
+      { location: "Denver", subtext: "Colorado" },
+      { location: "Gainesville", subtext: "Florida" },
+      { location: "Hoboken", subtext: "New Jersey" },
+      { location: "Houston Metro", subtext: "Texas" },
+      { location: "Indianapolis", subtext: "Indiana" },
+      { location: "Jacksonville", subtext: "Florida" },
+      { location: "Lacey", subtext: "Washington" },
+      { location: "Los Angeles", subtext: "California" },
+      { location: "Miami", subtext: "Florida" },
+      { location: "Orange County", subtext: "California" },
+      { location: "Marin County", subtext: "California" },
+      { location: "East Bay", subtext: "California" },
+      { location: "Orlando Metro", subtext: "Florida" },
+      { location: "Philadelphia Metro", subtext: " Pennsylvania" },
+      { location: "Phoenix", subtext: "Arizona" },
+      { location: "Pittsburgh", subtext: "Pennsylvania" },
+      { location: "Port Orange", subtext: "Florida" },
+      { location: "Portland", subtext: "Oregon" },
+      { location: "Raleigh", subtext: "North Carolina" },
+      { location: "Riverside", subtext: "California" },
+      { location: "Sacramento", subtext: "California" },
+      { location: "San Antonio", subtext: "Texas" },
+      { location: "San Diego", subtext: "California" },
+      { location: "San Francisco", subtext: "California" },
+      { location: "San Jose", subtext: "California" },
+      { location: "Seattle Metro", subtext: "Washington" },
+      { location: "San Francisco Peninsula", subtext: " California" },
+      { location: "Spokane ", subtext: "Washington" },
+      { location: "St. Augustine", subtext: "Florida" },
+      { location: "Tampa", subtext: "Florida" },
+      { location: "Ventura County", subtext: "California" },
+      { location: "Baltimore County", subtext: "Maryland" },
+      { location: "Washington Metro", subtext: "District of Columbia" },
+      { location: "West Palm Beach", subtext: "Florida" },
+    ],
+  };
+
   return (
     <div>
-      <div className="grid grid-cols-3 grid-rows-6 py-4 px-4 gap-4 sm:grid-cols-6 sm:grid-rows-3">
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">Aberfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl">
-            <span className="font-bold text-1xl">berfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>{" "}
-        <div>
-          <p className="text-1xl hover:text-black">
-            <span className="font-bold text-1xl">berfeldy</span> <br /> Holiday
-            rentals
-          </p>
-        </div>
-      </div>
-      <hr />
-      <div className="sm:flex justify-around">
-        <div>
-            <p>Support</p>
-        
-        <div>
-        <p>Help center</p>
-        <p> AirCover</p>
-        <p>Anti-discrimination</p>
-        <p>Disability support</p>
-        <p>Cancellation options</p>
-        <p>Report neighbourhood concern</p></div>
-        </div>
-        <div className="gap-5">
-            <p>Hosting</p>
-<div>  
-            <p>Airbnb your home</p>
-            <p>AirCover for hosts</p>
-            <p>Hosting resources</p>
-            <p>Community forum</p>
-            <p>Hosting responsibly</p></div>
-        </div>
-        <div className="gap-10">
-            <p>Airbnb</p>
-            <div>
-            <p>Newsroom</p>
-            <p>New features</p>
-            <p>Careers</p>
-            <p>Investors</p>
-            <p>Gift cards</p>
-            <p>Airbnb.org emergency stays</p>
-            </div>
-        </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 p-10">
+        {Data.slice(0, showMore ? 93 : 11).map((itm, idx) => (
+          <div key={idx}>
+            <h1 className="font-semibold">{itm.title}</h1>
+            <p>{itm.subtext}</p>
+          </div>
+        ))}
+        {!showMore && (
+          <button
+            onClick={() => {
+              setShowMore(true);
+            }}
+          >
+            See more V
+          </button>
+        )}
       </div>
     </div>
   );

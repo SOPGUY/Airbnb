@@ -13,17 +13,18 @@ function NavBar() {
     setToggle(!toggle);
   }
   return (
-    <div className="flex gap-5 rounded-full w-[90px] h-[40px]  border border-black justify-around py-2">
-      <div className="">
+    <div onClick={handleToggle}className="flex gap-5 rounded-full w-[90px] h-[40px]  border border-black justify-around py-2">
+      <div >
         {" "}
         {/* <Menu /> <CircleUserRound /> */}
-        <div onClick={handleToggle}>
+        <div>
           {toggle ? <X /> : <Menu />}
           {toggle ? (
-            <div className="absolute left-0 bg-red-500 h-[500px] w-[100px] top-0">
+            <div className=" h-[100px] w-[150px] bg-white z-10 absolute shadow-xl pl-2 mt-5">
               <div className="flex flex-col">
               <Link to="signup"> Sign up</Link>
               <Link to="login">Log in</Link>
+              <hr />
               <Link to="airbnb"> Airbnb-home</Link>
               <Link to="help">Help-center</Link>
             

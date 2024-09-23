@@ -7,7 +7,7 @@ import search from "../assets/search.png"
 
 function Header() {
   return (
-    <div className="flex justify-around">
+    <div className="flex justify-around sticky top-0 ">
       <div>
         <img src={img} alt="" />
       </div>

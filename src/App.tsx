@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp'
 
 import Airbnb from './pages/Airbnb'
 import LoginIn from './pages/Login'
+import Help from './pages/Help'
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/login' element={<LoginIn/>}/>
         <Route path='/airbnb' element={<Airbnb/>}/>
-        
+        <Route path='/help'  element={<Help/>}/>
+
       </Routes>
       </BrowserRouter>
     </div>
