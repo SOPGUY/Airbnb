@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, } from "react";
 import mansion from "../assets/mansions.jpg";
 import boat from "../assets/boats.jpg";
 import luxe from "../assets/luxe.jpg";
@@ -66,8 +66,8 @@ import beachfront from "../assets/beachFront.jpg"
 
 
 
-import button from "../assets/Button.png";
-import { CircleChevronRight, CircleChevronLeft, Castle } from "lucide-react";
+
+import { CircleChevronRight, CircleChevronLeft,  } from "lucide-react";
 
 function Frame() {
   const navRef = useRef<HTMLElement>(null);

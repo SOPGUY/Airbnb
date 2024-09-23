@@ -1,4 +1,4 @@
-import React from 'react'
+
 import policy from "../assets/policy1.png"
 import resources from "../assets/Airbnb-Resources-Web.png"
 function ExploreMore() {

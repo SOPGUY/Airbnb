@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {  Globe } from "lucide-react";
 import img1 from "../assets/facebook2.png"
 import img2 from "../assets/twitter.png"

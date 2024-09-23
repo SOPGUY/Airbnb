@@ -1,8 +1,8 @@
 
 import Cate from "./Cate"
-import Cateeee from "./Cateeee"
+
 import Category1 from "./Category22"
-import Category2 from "./Category22"
+
 import Category3 from "./Category3"
 
 function Footer() {
