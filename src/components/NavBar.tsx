@@ -24,7 +24,6 @@ function NavBar() {
               <div className="flex flex-col">
               <Link to="signup"> Sign up</Link>
               <Link to="login">Log in</Link>
-              <hr />
               <Link to="airbnb"> Airbnb-home</Link>
               <Link to="help">Help-center</Link>
             

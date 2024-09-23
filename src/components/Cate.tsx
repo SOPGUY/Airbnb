@@ -758,7 +758,7 @@ export default function Cate() {
         Inspiration for future getaways
       </h1>
       
-      <div className="flex gap-5 text-nowrap  ">{renderNavigation()}</div>
+      <div className="lg:flex gap-5 text-nowrap  hidden md:block">{renderNavigation()}</div>
       
       <hr />
       <div className="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-6 gap-5 ">{renderLocations()}</div>
